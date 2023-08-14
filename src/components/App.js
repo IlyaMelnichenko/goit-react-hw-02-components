@@ -1,6 +1,6 @@
 import { Feedback } from './Feedback/Feedback';
 import React, { Component } from 'react';
-import { Phonebook } from './Phonebook/Phonebook';
+
 
 export class App extends Component {
   state = {
@@ -9,8 +9,7 @@ export class App extends Component {
     bad: 0,
     total: 0,
     positive: 0,
-    contacts: [],
-    filter:''
+    
     
   };
   onClickGood = () => {
@@ -40,13 +39,7 @@ export class App extends Component {
     }
     return Math.floor((this.state.good / this.countTotalFeedback()) * 100);
   };
-  addPhoneCard=newCard=>{
-    this.setState(prevState=>({
-      contacts:[...prevState.contacts,newCard]
-     
-    }));
-    
-  }
+ 
   
   render() {
     return (
@@ -61,7 +54,7 @@ export class App extends Component {
           bad={this.state.bad}
           neutral={this.state.neutral}
         />
-        <Phonebook contacts={this.state.contacts} addPhoneCard={this.addPhoneCard} />
+       
       </>
       
     );
