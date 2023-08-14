@@ -10,7 +10,8 @@ export class App extends Component {
     total: 0,
     positive: 0,
     contacts: [],
-    name: ''
+    filter:''
+    
   };
   onClickGood = () => {
     this.setState(prevState => ({
@@ -39,7 +40,14 @@ export class App extends Component {
     }
     return Math.floor((this.state.good / this.countTotalFeedback()) * 100);
   };
-
+  addPhoneCard=newCard=>{
+    this.setState(prevState=>({
+      contacts:[...prevState.contacts,newCard]
+     
+    }));
+    
+  }
+  
   render() {
     return (
       <>
@@ -53,7 +61,7 @@ export class App extends Component {
           bad={this.state.bad}
           neutral={this.state.neutral}
         />
-        <Phonebook contacts={this.state.contacts} name={this.state.name} />
+        <Phonebook contacts={this.state.contacts} addPhoneCard={this.addPhoneCard} />
       </>
       
     );
