@@ -9,8 +9,7 @@ export class App extends Component {
     bad: 0,
     total: 0,
     positive: 0,
-    contacts: [],
-    filter:''
+    
     
   };
   onClickGood = () => {
