@@ -1,4 +1,5 @@
 import { Statistic } from './Statistic';
+import { StyledButton, StyledFeedBack } from './StyledFeedBack';
 
 export const Feedback = ({
   onGood,
@@ -11,13 +12,13 @@ export const Feedback = ({
   countPerc,
 }) => {
   return (
-    <>
+    <StyledFeedBack>
       <h2>Please leave feedback</h2>
-      <button type="button" onClick={onGood}>
+      <StyledButton type="button" onClick={onGood}>
         Good
-      </button>
-      <button onClick={onNeutral}>Neutral</button>
-      <button onClick={onBad}>Bad</button>
+      </StyledButton>
+      <StyledButton onClick={onNeutral}>Neutral</StyledButton>
+      <StyledButton onClick={onBad}>Bad</StyledButton>
       <h2>Statistics</h2>
       {countFeed() === 0 && <p>Please leave feedback</p>}
       {countFeed() !== 0 && (
@@ -29,6 +30,8 @@ export const Feedback = ({
           countPerc={countPerc}
         />
       )}
-    </>
+    </StyledFeedBack>
   );
 };
+
+
