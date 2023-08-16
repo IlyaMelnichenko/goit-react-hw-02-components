@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { StyledFeedBack } from './StyledFeedBack';
 import { Statistic } from './Statistic';
 import { FeedbackOptions } from './FeedbackOptions';
+import { Section } from './Section';
 
 
 
@@ -38,7 +39,7 @@ export class App extends Component {
     return (
       <StyledFeedBack>
         <Section title="Please leave feedback">
-        <FeedbackOptions handleAddStats={this.onClickAdd} options={Object.keys(this.state)} />
+        <FeedbackOptions onClickAdd={this.onClickAdd} options={Object.keys(this.state)} />
         </Section>
         <Section title="Statistics">
        {this.countPositiveFeedbackPercentage===0?(<p>Please leave feedback</p>):(
