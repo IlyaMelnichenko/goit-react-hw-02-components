@@ -36,6 +36,8 @@ export class App extends Component {
  
   
   render() {
+    const total=this.countTotalFeedback();
+    const positivePercentage=this.countPositiveFeedbackPercentage();
     return (
       <StyledFeedBack>
         <Section title="Please leave feedback">
@@ -47,8 +49,8 @@ export class App extends Component {
           good={this.state.good}
           bad={this.state.bad}
           neutral={this.state.neutral}
-          countFeed={this.countTotalFeedback }
-          countPerc={this.countPositiveFeedbackPercentage}
+          total={total}
+          positivePercentage={positivePercentage}
         />)
       }
        </Section>
