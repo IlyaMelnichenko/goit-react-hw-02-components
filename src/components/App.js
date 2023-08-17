@@ -3,6 +3,7 @@ import { StyledFeedBack } from './StyledFeedBack';
 import { Statistic } from './Statistic';
 import { FeedbackOptions } from './FeedbackOptions';
 import { Section } from './Section';
+import { Notification } from './Notification';
 
 
 
@@ -44,7 +45,7 @@ export class App extends Component {
         <FeedbackOptions onClickAdd={this.onClickAdd} options={Object.keys(this.state)} />
         </Section>
         <Section title="Statistics">
-       {total===0?(<p>Please leave feedback</p>):(
+       {total===0?(<Notification message={'Please leave feedback'} />):(
        <Statistic
           good={this.state.good}
           bad={this.state.bad}
