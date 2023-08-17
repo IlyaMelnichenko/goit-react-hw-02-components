@@ -44,7 +44,7 @@ export class App extends Component {
         <FeedbackOptions onClickAdd={this.onClickAdd} options={Object.keys(this.state)} />
         </Section>
         <Section title="Statistics">
-       {this.countPositiveFeedbackPercentage===0?(<p>Please leave feedback</p>):(
+       {total===0?(<p>Please leave feedback</p>):(
        <Statistic
           good={this.state.good}
           bad={this.state.bad}

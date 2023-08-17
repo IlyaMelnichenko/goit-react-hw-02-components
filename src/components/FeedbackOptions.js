@@ -8,9 +8,7 @@ export const FeedbackOptions= ({options,onClickAdd})=>{
        key={option}
        onClick={() => onClickAdd(option)}
     >
-       {option === "good" ? <p>good</p> : null}
-       {option === "neutral" ? <p>neutral</p> : null}
-       {option === "bad" ? <p>bad</p> : null}
+        <p>{option}</p>
     </StyledButton>
  ))}
 </>
